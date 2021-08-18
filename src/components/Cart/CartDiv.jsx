@@ -5,7 +5,7 @@ import CartIcon from './CartIcon'
 
 function CartDiv() {
       return (
-        <button>
+        <button >
           <span className={classes.icon}>
             <CartIcon />
           </span>

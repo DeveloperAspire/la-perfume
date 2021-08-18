@@ -5,6 +5,7 @@ import Hero from './components/Layout/Hero'
 import Perfumes from './components/Products/Perfumes'
 import Quote from './components/Layout/Quote'
 import Footer from './components/Layout/Footer'
+import Cart from './components/Cart/Cart'
 import './App.css';
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
       <Perfumes/>
       <Quote/>
       <Footer/>
+      <Cart/>
+
     </Fragment>
   );
 }
