@@ -5,9 +5,18 @@ header{
       color:white;
       font-family: 'Roboto' sans-serif;
       padding:2rem;
+      position: sticky !important;
+      top:0;
+      left:0;
+      right:0;
+      width:100%;
+      z-index: 30;
+      overflow: hidden;
 }
 header h1{
       font-weight: 300;
       font-family: 'Rochester', sans-serif;
       font-size: 3rem;
 }
+
+

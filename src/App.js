@@ -1,9 +1,15 @@
-import Header from './components/Header'
+import { Fragment } from 'react';
+
+import Header from './components/Layout/Header'
+import Hero from './components/Layout/Hero'
 import './App.css';
 
 function App() {
   return (
-   <Header/>
+    <Fragment>
+      <Header />
+      <Hero />
+    </Fragment>
   );
 }
 
