@@ -1,8 +1,7 @@
 import React from 'react'
 
 const AuthContext = React.createContext({
-      openCart: true,
-      openCartHandler: ()=> {}
+     itemsNumber: 0,
 })
 
 export default AuthContext

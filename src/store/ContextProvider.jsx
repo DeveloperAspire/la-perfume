@@ -2,23 +2,16 @@ import React, {useState} from 'react'
 import AuthContext from './context'
 
 function ContextProvider(props) {
-      const [openCart, setOpenCart] = useState(false)
+  // eslint-disable-next-line
+  const [itemsNumber, setItemsNumber] = useState(0);
 
-      const openCartHandler = ()=> {
-         setOpenCart(openChart => !openCart)
-      }
+  const value = {
+    itemsNumber,
+  };
 
-      const value={
-            openCart,
-            openCartHandler
-      }
-
-      return (
-            <AuthContext.Provider value={value}>
-                  {props.children}
-                  
-            </AuthContext.Provider>
-      )
+  return (
+    <AuthContext.Provider value={value}>{props.children}</AuthContext.Provider>
+  );
 }
 
 export default ContextProvider
