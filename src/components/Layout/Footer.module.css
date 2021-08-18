@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Rochester&display=swap");
+
+footer {
+  font-family: "Roboto" sans-serif;
+  padding: 2rem;
+  background-color:#020305 ;
+  color:white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+footer h1 {
+  font-weight: 300;
+  font-family: "Rochester", sans-serif;
+  font-size: 2rem;
+}
+
+footer a {
+      color:#C4C3EC;
+      text-decoration: none;
+}
+
+footer ul{
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+}
+footer ul li {
+      margin-right: 1rem;
+}

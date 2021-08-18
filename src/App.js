@@ -4,6 +4,7 @@ import Header from './components/Layout/Header'
 import Hero from './components/Layout/Hero'
 import Perfumes from './components/Products/Perfumes'
 import Quote from './components/Layout/Quote'
+import Footer from './components/Layout/Footer'
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Hero />
       <Perfumes/>
       <Quote/>
+      <Footer/>
     </Fragment>
   );
 }
