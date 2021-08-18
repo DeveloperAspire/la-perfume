@@ -18,9 +18,10 @@
       display: flex;
       text-align: center;
       align-items: center;
+      padding: 1rem;
       margin: 0 auto;
       justify-content: space-between;
-      /* padding: 1rem 3rem; */
+      border-bottom: 1px solid #CCCCCC;
 }
 .cart .table--head span{
       display: inline-block;
