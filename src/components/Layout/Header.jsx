@@ -3,11 +3,11 @@ import CartDiv from '../Cart/CartDiv'
 
 import './Header.module.css'
 
-function Header() {
+function Header({onClick}) {
       return (
             <header>
                  <h1>La Perfume</h1> 
-                 <CartDiv/>
+                 <CartDiv onClick={onClick}/>
                  
             </header>
       )

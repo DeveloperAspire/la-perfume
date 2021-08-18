@@ -2,9 +2,10 @@ import React from "react";
 
 import classes from './Cart.module.css'
 
-function Cart() {
+function Cart({show}) {
+  const buttonClass = `${classes.cart} ${show ? classes.show : ''}`
   return (
-    <div className={classes.cart}>
+    <div className={buttonClass}>
       <h1>Your Cart</h1>
       <div className={classes['table--head']}>
             <span>Product</span>
@@ -12,7 +13,7 @@ function Cart() {
             <span>Quantity</span>
             <span>Total</span>
       </div>
-      
+
     </div>
   );
 }

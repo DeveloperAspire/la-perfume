@@ -3,9 +3,11 @@ import React from 'react'
 import classes from './CartDiv.module.css'
 import CartIcon from './CartIcon'
 
-function CartDiv() {
+
+function CartDiv({onClick}) {
+
       return (
-        <button >
+        <button onClick={onClick}>
           <span className={classes.icon}>
             <CartIcon />
           </span>

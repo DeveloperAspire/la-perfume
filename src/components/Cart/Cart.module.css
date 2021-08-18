@@ -3,7 +3,7 @@
       width:100%;
       height:100vh;
       top:100px;
-      left:0%;
+      left:100%;
       z-index: 30;
       background-color: white;
       text-align: center;
@@ -29,6 +29,6 @@
         font-size: 18px;
         font-weight: bold;
 }
-.cart.show{
-      left:100%;
+.show{
+      left:0%;
 }
