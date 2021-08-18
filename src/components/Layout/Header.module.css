@@ -4,8 +4,11 @@ header{
       background-color: rgb(22, 20, 20);
       color:white;
       font-family: 'Roboto' sans-serif;
-      padding:2rem;
+      padding:1.5rem 3rem;
       position: sticky !important;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       top:0;
       left:0;
       right:0;
