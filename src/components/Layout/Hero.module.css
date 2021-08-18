@@ -1,3 +1,4 @@
+
 main{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -10,6 +11,7 @@ main{
 }
 main h1{
       margin-bottom: 1.5rem;
+      letter-spacing: 2px;
 }
 main p{
       font-weight: lighter;
