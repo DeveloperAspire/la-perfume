@@ -3,6 +3,7 @@ import { Fragment } from 'react';
 import Header from './components/Layout/Header'
 import Hero from './components/Layout/Hero'
 import Perfumes from './components/Products/Perfumes'
+import Quote from './components/Layout/Quote'
 import './App.css';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <Hero />
       <Perfumes/>
+      <Quote/>
     </Fragment>
   );
 }
