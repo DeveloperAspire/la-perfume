@@ -1,0 +1,11 @@
+
+.display{
+      background-color: #161414;
+      padding:2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:2.5rem;
+}
+.display img{
+      width:200px;
+}

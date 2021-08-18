@@ -1,0 +1,25 @@
+.product {
+  color: white;
+  background-color: #020305;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+.product .price {
+      text-align: right;
+      margin:1rem 0;
+      font-weight: bold;
+      font-size: 20px;
+}
+.product .description {
+  text-align: left;
+  margin-top: 1.5rem;
+}
+.product button {
+  background-color: transparent;
+  border: none;
+  border: 1px solid #f5a034;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-size: 16px;
+}
