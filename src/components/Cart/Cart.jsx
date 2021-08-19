@@ -13,7 +13,7 @@ function Cart({ show, notShowHandler }) {
           <span className={classes.icon}>
             <BackIcon />
           </span>
-          <p>Go back to Shopping</p>
+          <p>Continue shopping</p>
         </button>
         <h3>Your Cart</h3>
         <CartButton />
