@@ -10,7 +10,10 @@
       padding:2rem 10rem;
       transition: left .5s ease-in;
 }
-.cart .heading h1{
+.show{
+      left:0%;
+}
+.cart .heading h3{
       font-weight: lighter;
       margin-right: 2rem;
 }
@@ -18,23 +21,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 2rem;
 }
-.cart .table--head{
+.cart .button{
       display: flex;
-      text-align: center;
       align-items: center;
-      padding: 1rem;
-      margin: 0 auto;
-      justify-content: space-between;
-      border-bottom: 1px solid #CCCCCC;
+      border:none;
+      background-color: transparent;
+      margin-right: 10rem;
 }
-.cart .table--head span{
-      display: inline-block;
-        /* margin-left: 7rem; */
-        font-size: 18px;
-        font-weight: bold;
+.cart .icon{
+       width: 20px;
+       color:#51A8F1;
+  height: 20px;
+  margin-right: 0.5rem;
 }
-.show{
-      left:0%;
-}
+

@@ -1,22 +1,22 @@
 import React from "react";
-import CartButton from '../Cart/CartButton'
+import CartButton from "../Cart/CartButton";
+import BackIcon from "../Layout/BackIcon";
 
-import classes from './Cart.module.css'
+import classes from "./Cart.module.css";
 
-function Cart({show}) {
-  const buttonClass = `${classes.cart} ${show ? classes.show : ''}`
+function Cart({ show, notShowHandler }) {
+  const buttonClass = `${classes.cart} ${show ? classes.show : ""}`;
   return (
     <div className={buttonClass}>
       <div className={classes.heading}>
-        <h1>Your Cart</h1>
-        <CartButton/>
-      </div>
-
-      <div className={classes["table--head"]}>
-        <span>Product</span>
-        <span>Price</span>
-        <span>Quantity</span>
-        <span>Total</span>
+        <button className={classes.button} onClick={notShowHandler}>
+          <span className={classes.icon}>
+            <BackIcon />
+          </span>
+          <p>Go back to Shopping</p>
+        </button>
+        <h3>Your Cart</h3>
+        <CartButton />
       </div>
     </div>
   );

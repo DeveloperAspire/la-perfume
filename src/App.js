@@ -25,7 +25,7 @@ function App() {
       <Perfumes />
       <Quote />
       <Footer />
-      <Cart show={showCart}/>
+      <Cart show={showCart} notShowHandler={showCartHandler}/>
     </ContextProvider>
   );
 }
