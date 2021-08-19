@@ -1,6 +1,7 @@
 import React from "react";
 import CartButton from "../Cart/CartButton";
 import BackIcon from "../Layout/BackIcon";
+import CartItem from './CartItem'
 
 import classes from "./Cart.module.css";
 
@@ -18,6 +19,8 @@ function Cart({ show, notShowHandler }) {
         <h3>Your Cart</h3>
         <CartButton />
       </div>
+
+      <CartItem/>
     </div>
   );
 }

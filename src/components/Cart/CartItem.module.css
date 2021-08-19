@@ -1,0 +1,68 @@
+.container{
+      background-color: white;
+      padding:2rem;
+      margin-top: 1rem;
+        
+}
+.details{
+      display: grid;
+      grid-template-columns: 10% 50% 40%;
+      position: relative;
+}
+.details button{
+      display: flex;
+   align-items: center;
+  border: none;
+  background-color: transparent;
+  margin-right: 10rem;
+}
+.details .icon{
+  width: 20px;
+  color: red;
+  height: 20px;
+  margin-right: 0.5rem;
+  position: absolute;
+  top:0;
+  right:0;
+}
+.details img{
+      width:50px;
+}
+.description{
+      text-align: left;
+}
+.description p{
+      font-weight: lighter;
+}
+
+.add--more{
+      text-align: right;
+}
+.add--more p{
+      font-weight: lighter;
+}
+.input--container .price{
+      font-weight: bold;
+      margin-top: 1rem;
+      
+}
+.input{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border:1px solid #CCCCCC;
+     display: inline-block;
+     padding: .5rem 0;
+     font-size: 18px;
+     margin-top: .5rem;
+}
+.input input{
+      border:none;
+      text-align: center;
+      margin: 0 1rem;
+      width:20%;
+}
+.input span{
+      cursor:pointer;
+}
