@@ -1,0 +1,22 @@
+.heading h3 {
+  font-weight: lighter;
+  margin-right: 2rem;
+}
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  margin-right: 10rem;
+}
+.icon {
+  width: 20px;
+  color: #51a8f1;
+  height: 20px;
+  margin-right: 0.5rem;
+}
