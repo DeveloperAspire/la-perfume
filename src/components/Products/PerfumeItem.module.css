@@ -8,11 +8,17 @@
   border-radius: 0.5rem;
   font-family: 'Montserrat', sans-serif;
 }
+.product .name{
+  margin-top: 1rem;
+  font-size: 25px;
+  letter-spacing: 4px;
+}
 .product .price {
       text-align: right;
       margin:1rem 0;
       font-weight: bold;
       font-size: 20px;
+      
 }
 .product .description {
   text-align: left;
