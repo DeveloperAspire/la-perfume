@@ -35,3 +35,12 @@
   height: 20px;
   margin-right: 0.5rem;
 }
+.cart .total{
+  text-align: right;
+  margin-top: 1rem;
+}
+.cart .total span{
+  margin-left: 7rem;
+  font-size: 18px;
+  font-weight: bold;
+}

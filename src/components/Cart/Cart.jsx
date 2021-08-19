@@ -6,9 +6,9 @@ import CartItem from './CartItem'
 import classes from "./Cart.module.css";
 
 function Cart({ show, notShowHandler }) {
-  const buttonClass = `${classes.cart} ${show ? classes.show : ""}`;
+  const cartClass = `${classes.cart} ${show ? classes.show : ""}`;
   return (
-    <div className={buttonClass}>
+    <div className={cartClass}>
       <div className={classes.heading}>
         <button className={classes.button} onClick={notShowHandler}>
           <span className={classes.icon}>
@@ -21,6 +21,11 @@ function Cart({ show, notShowHandler }) {
       </div>
 
       <CartItem/>
+
+      <div className={classes.total}>
+        <span>Total</span>
+        <span>$20.55</span>
+      </div>
     </div>
   );
 }
