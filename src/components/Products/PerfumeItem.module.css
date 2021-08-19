@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
 .product {
   color: white;
   background-color: #020305;
   text-align: center;
   padding: 1.5rem;
   border-radius: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
 }
 .product .price {
       text-align: right;
@@ -14,6 +17,8 @@
 .product .description {
   text-align: left;
   margin-top: 1.5rem;
+  line-height: 1.5rem;
+
 }
 .product button {
   background-color: transparent;
