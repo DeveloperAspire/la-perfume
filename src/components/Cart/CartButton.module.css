@@ -1,4 +1,4 @@
-button{
+.button{
       padding: 10px 3rem;
       display: flex;
       align-items: center;
@@ -6,9 +6,9 @@ button{
       border:none;
       color:#F5A034;
       position: relative;
-
+      z-index: 1000;
 }
-button:hover .number{
+.button:hover .number{
       color:white;
       background-color: #F5A034;
      

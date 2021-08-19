@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 
-import classes from './CartDiv.module.css'
+import classes from './CartButton.module.css'
 import CartIcon from './CartIcon'
 import context from '../../store/context'
 
@@ -11,7 +11,7 @@ function CartDiv({onClick}) {
 
 
       return (
-        <button onClick={onClick}>
+        <button className={classes.button} onClick={onClick}>
           <span className={classes.icon}>
             <CartIcon />
           </span>

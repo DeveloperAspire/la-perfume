@@ -1,5 +1,5 @@
 import React from 'react'
-import CartDiv from '../Cart/CartDiv'
+import CartButton from '../Cart/CartButton'
 
 import './Header.module.css'
 
@@ -7,7 +7,7 @@ function Header({onClick}) {
       return (
             <header>
                  <h1>La Perfume</h1> 
-                 <CartDiv onClick={onClick}/>
+                 <CartButton onClick={onClick}/>
                  
             </header>
       )
