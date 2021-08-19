@@ -3,7 +3,7 @@ main{
       display:grid;
       grid-template-columns: 1fr 1fr;
       background-color: #010204;
-      padding: 0 4rem 0;
+      padding: 3rem 4rem 0;
       color:white;
       gap:3rem;
       margin: 0;
