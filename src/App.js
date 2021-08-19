@@ -30,7 +30,7 @@ function App() {
       <Perfumes />
       <Quote />
       <Footer />
-      <Cart show={showCart} notShowHandler={showCartHandler} />
+      <Cart show={showCart} notShowHandler={showCartHandler} checkOutHandler={checkOutHandler}/>
       <CheckOut
         show={checkout}
         checkOutHandler={checkOutHandler}

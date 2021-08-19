@@ -2,16 +2,11 @@ import React from 'react'
 import classes from './CheckOut.module.css'
 import CartHeader from './CartHeader'
 
-function CheckOut({ show, checkOutHandler, notShowHandler }) {
+function CheckOut({ show, checkOutHandler }) {
       const checkoutClass = `${classes.checkout} ${show ? classes.show : ''}`
-      const backToShopping = ()=> {
-            checkOutHandler()
-            notShowHandler()
-
-      }
   return (
     <div className={checkoutClass}>
-      <CartHeader notShowHandler={backToShopping}  title="Checkout" />
+      <CartHeader notShowHandler={checkOutHandler}  title="Checkout" />
     </div>
   );
 }
