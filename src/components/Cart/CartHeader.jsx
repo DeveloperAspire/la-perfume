@@ -4,7 +4,7 @@ import BackIcon from "../Layout/BackIcon";
 
 import classes from './CartHeader.module.css'
 
-function CartHeader({notShowHandler}) {
+function CartHeader({notShowHandler,title}) {
       return (
         <div>
           <div className={classes.heading}>
@@ -14,7 +14,7 @@ function CartHeader({notShowHandler}) {
               </span>
               <p>Continue shopping</p>
             </button>
-            <h3>Your Cart</h3>
+            <h3>{title}</h3>
             <CartButton />
           </div>
         </div>
