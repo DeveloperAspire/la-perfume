@@ -10,7 +10,18 @@ function CartItem({id,name, description,image, price, amount}) {
   const totalPrice = filterPrice[0].price * filterPrice[0].amount
   const itemPrice=`$${totalPrice}`
 
+const reduceAmount = ()=> {
+   const itemToBeReduced = {
+     id,
+     name,
+     image,
+     price,
+     amount: 1,
+     description,
+   };
+   Ctx.reduceItem(itemToBeReduced);
 
+}
   const removeItem = () => {
     const removed = {
       id,
@@ -52,7 +63,7 @@ function CartItem({id,name, description,image, price, amount}) {
         <p>Quantity</p>
         <div className={classes["input--container"]}>
           <div className={classes.input}>
-            <span>-</span>
+            <span onClick={reduceAmount}>-</span>
             <input type="number" value={amount} />
             <span onClick={addMore}>+</span>
           </div>
