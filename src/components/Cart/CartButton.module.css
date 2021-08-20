@@ -9,8 +9,8 @@
       z-index: 1000;
 }
 .button:hover .number{
-      color:white;
-      background-color: #F5A034;
+      color:#F5A034;
+      background-color: white;
      
 }
 .icon{
@@ -23,7 +23,8 @@
       position:absolute;
       top:-0px;
       left:70px;
-      background-color: white;
+      color:white;
+      background-color: #F5A034;
       padding:1px;
       border-radius: 50%;
       height: 27px;

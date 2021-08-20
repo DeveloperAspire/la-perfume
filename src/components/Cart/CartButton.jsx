@@ -8,6 +8,9 @@ import context from '../../store/context'
 function CartDiv({onClick}) {
 
   const Ctx =useContext(context)
+  const itemsNumber = Ctx.items.reduce((accmulator, currentValue)=> {
+  return accmulator + currentValue.amount
+  }, 0)
 
 
       return (
@@ -15,7 +18,7 @@ function CartDiv({onClick}) {
           <span className={classes.icon}>
             <CartIcon />
           </span>
-          <p className={classes.number}>{Ctx.itemsNumber}</p>
+          <p className={classes.number}>{itemsNumber}</p>
         </button>
       );
 }

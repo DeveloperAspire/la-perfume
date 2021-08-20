@@ -1,18 +1,17 @@
 import React from "react";
 import classes from "./CartItem.module.css";
 import TrashIcon from "../Layout/TrashIcon";
-import image from '../../images/hero.jpg'
+// import image from '../../images/hero.jpg'
 
-function CartItem() {
+function CartItem({name, description,image}) {
   return (
     <div className={classes.container}>
       <div className={classes.details}>
         <img src={image} alt="" />
         <div className={classes.description}>
-          <h3>Prada</h3>
+          <h3>{name}</h3>
           <p>
-            This is a perfume that vammtiolf shyrruke jkvnbhioarioe kenkfegnek
-            kenfgb;ebj jbfjbJEBGJKBEGJB JJUGHI JRGHRGIIHN jhgjaj.bjhg jenfkg.jj
+            {description}
           </p>
         </div>
         <button>
