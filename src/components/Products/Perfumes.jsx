@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import PerfumeItem from './PerfumeItem'
+import Loader from '../Layout/Loader'
 
 import classes from './Perfumes.module.css'
 
 const Perfumes = () => {
   const [product, setProduct] = useState([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(()=> {
     fetchProducts()
@@ -12,6 +14,7 @@ const Perfumes = () => {
   }, [])
 
   const fetchProducts = async ()=> {
+    setLoading(true)
       let transformedData = [];
        const response = await fetch(
          "https://react-demo-7bdfc-default-rtdb.firebaseio.com/perfumes.json"
@@ -29,6 +32,7 @@ const Perfumes = () => {
          };
          transformedData.push(productList)
        }
+       setLoading(false)
        setProduct(transformedData)
   }
 
@@ -36,6 +40,7 @@ const Perfumes = () => {
       return (
         <div className={classes.display}>
           {PRODUCTS}
+          {loading && <Loader />}
         </div>
       );
 }
