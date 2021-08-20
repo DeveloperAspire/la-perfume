@@ -36,7 +36,7 @@ const Perfumes = () => {
        setProduct(transformedData)
   }
 
-  const PRODUCTS = product.map((item) => <PerfumeItem key={item.id} name={item.name} image={item.image} description={item.description} price={item.price} />);
+  const PRODUCTS = product.map((item) => <PerfumeItem key={item.id} id={item.id} name={item.name} image={item.image} description={item.description} price={item.price} />);
       return (
         <div className={classes.display}>
           {PRODUCTS}
