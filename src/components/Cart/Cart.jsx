@@ -9,7 +9,7 @@ import classes from "./Cart.module.css";
 function Cart({ show, notShowHandler, checkOutHandler }) {
   const Ctx = useContext(context);
   const [cartIsEmpty, setCartIsEmpty] = useState(Ctx.items.length === 0);
-  const totalAmount = `$${Ctx.totalAmount}`;
+  const totalAmount = `$${Ctx.totalAmount.toFixed(2)}`;
 
   useEffect(() => {
     setCartIsEmpty(Ctx.items.length === 0);
