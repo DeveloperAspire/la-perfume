@@ -4,8 +4,12 @@ import classes from './CheckOutForm.module.css'
 
 const CheckOutForm = ()=> {
 
+  const submitHandler = (e)=> {
+       e.preventDefault()
+  }
+
       return (
-        <form className={classes.form}>
+        <form className={classes.form} onSubmit={submitHandler}>
           <div className={classes["form-item"]}>
             <div className={classes["form-control"]}>
               <label htmlFor="Name">Full Name</label>
