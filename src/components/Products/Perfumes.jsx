@@ -21,7 +21,6 @@ const Perfumes = () => {
        );
        const data = await response.json()
 
-       console.log(data)
        for(let key in data){
          const productList = {
            id: key,

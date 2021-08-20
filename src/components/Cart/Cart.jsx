@@ -18,10 +18,12 @@ function Cart({ show, notShowHandler, checkOutHandler }) {
   const cartItem = Ctx.items.map((item) => (
     <CartItem
       key={item.id}
+      id={item.id}
       name={item.name}
       description={item.description}
       image={item.image}
       price={item.price}
+      amount={item.amount}
     />
   ));
 
