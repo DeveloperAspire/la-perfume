@@ -9,7 +9,7 @@ import Cart from './components/Cart/Cart'
 import ContextProvider from './store/ContextProvider'
 
 import './App.css';
-import CheckOut from './components/Cart/CheckOut';
+import CheckOut from './components/CheckOut/CheckOut';
 
 function App() {
   const [showCart, setShowCart] = useState(false)
