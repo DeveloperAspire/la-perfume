@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./CartItem.module.css";
 import TrashIcon from "../Layout/TrashIcon";
-// import image from '../../images/hero.jpg'
 
 function CartItem({name, description,image}) {
   return (

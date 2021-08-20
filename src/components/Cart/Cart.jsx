@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import CartHeader from "./CartHeader";
 import CartItem from "./CartItem";
 import CheckOutButton from "./CheckOutButton";
@@ -7,10 +7,13 @@ import context from "../../store/context";
 import classes from "./Cart.module.css";
 
 function Cart({ show, notShowHandler, checkOutHandler }) {
- 
   const Ctx = useContext(context);
-   const [cartIsEmpty, setCartIsEmpty] = useState(Ctx.items.length === 0);
-  // setCartIsEmpty(Ctx.items.length === 0);
+  const [cartIsEmpty, setCartIsEmpty] = useState(Ctx.items.length === 0);
+  const totalAmount = `$${Ctx.totalAmount}`;
+
+  useEffect(() => {
+    setCartIsEmpty(Ctx.items.length === 0);
+  }, [Ctx.items]);
 
   const cartItem = Ctx.items.map((item) => (
     <CartItem
@@ -22,7 +25,7 @@ function Cart({ show, notShowHandler, checkOutHandler }) {
   ));
 
   const cartEmptyText = (
-    <div className={classes['cart-text']}>
+    <div className={classes["cart-text"]}>
       <p>Your Cart in Empty</p>
     </div>
   );
@@ -30,13 +33,14 @@ function Cart({ show, notShowHandler, checkOutHandler }) {
   return (
     <div className={cartClass}>
       <CartHeader notShowHandler={notShowHandler} title="Your Cart" />
-      {!cartIsEmpty && cartItem}
+      {cartItem}
+
       {cartIsEmpty && cartEmptyText}
       {!cartIsEmpty && (
         <React.Fragment>
           <div className={classes.total}>
             <span>Total</span>
-            <span>$20.55</span>
+            <span>{totalAmount}</span>
           </div>
           <CheckOutButton
             notShowHandler={notShowHandler}
