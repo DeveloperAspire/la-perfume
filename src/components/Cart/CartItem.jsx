@@ -4,10 +4,14 @@ import TrashIcon from "../Layout/TrashIcon";
 import context from '../../store/context'
 
 function CartItem({id,name, description,image, price, amount}) {
-  const Ctx = useContext(context)
-  const itemPrice = `$${price}`
+  const Ctx = useContext(context);
+  const filterPrice = Ctx.items.filter((item) => item.id === id);
 
-  const removeItem = ()=> {
+  const totalPrice = filterPrice[0].price * filterPrice[0].amount
+  const itemPrice=`$${totalPrice}`
+
+
+  const removeItem = () => {
     const removed = {
       id,
       name,
@@ -17,28 +21,25 @@ function CartItem({id,name, description,image, price, amount}) {
       description,
     };
     Ctx.removeItem(removed);
-  }
-  const addMore = ()=> {
+  };
+  const addMore = () => {
     const added = {
       id,
       name,
       image,
       price,
-      amount:1,
+      amount: 1,
       description,
-    }
-    Ctx.addItem(added)
-
-  }
+    };
+    Ctx.addItem(added);
+  };
   return (
     <div className={classes.container}>
       <div className={classes.details}>
         <img src={image} alt="" />
         <div className={classes.description}>
           <h3>{name}</h3>
-          <p>
-            {description}
-          </p>
+          <p>{description}</p>
         </div>
         <button>
           <span className={classes.icon} onClick={removeItem}>
@@ -49,7 +50,7 @@ function CartItem({id,name, description,image, price, amount}) {
 
       <div className={classes["add--more"]}>
         <p>Quantity</p>
-        <div className={classes['input--container']}>
+        <div className={classes["input--container"]}>
           <div className={classes.input}>
             <span>-</span>
             <input type="number" value={amount} />
