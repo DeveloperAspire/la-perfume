@@ -38,3 +38,16 @@
 .product button:hover{
       transform: scale(1.1)
 }
+
+.img-container{
+  width: 100%;
+    min-height: 120px;
+    max-height: 400px;
+     overflow: hidden;
+}
+.img-container img{
+  max-width: 100%;
+  height: auto;
+ 
+
+}

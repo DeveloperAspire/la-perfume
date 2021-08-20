@@ -1,18 +1,21 @@
 import React from 'react'
 
-import image from '../../images/hero.jpg'
 import classes from './PerfumeItem.module.css'
 
-function PerfumeItem() {
+const PerfumeItem = ({name,price,image,description}) => {
+      const itemPrice = `$${price}`
       return (
-            <div className={classes.product}>
-                  <img src={image} alt="" />
-                  <h4 className={classes.name}>Prada</h4>
-                   <p className={classes.description}>This is a perfume that vammtiolf shyrruke jkvnbhioarioe kenkfegnek kenfgb;ebj jbfjbJEBGJKBEGJB JJUGHI JRGHRGIIHN jhgjaj.bjhg jenfkg.jj</p>
-                   <p className={classes.price}>$20.55</p>
-                   <button>Add to cart </button>
-            </div>
-      )
+        <div className={classes.product}>
+          <div className={classes['img-container']}>
+            <img src={image} alt="" />
+          </div>
+
+          <h4 className={classes.name}>{name}</h4>
+          <p className={classes.description}>{description}</p>
+          <p className={classes.price}>{itemPrice}</p>
+          <button>Add to cart </button>
+        </div>
+      );
 }
 
 export default PerfumeItem
