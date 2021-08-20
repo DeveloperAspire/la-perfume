@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 
 import classes from './CartButton.module.css'
 import CartIcon from './CartIcon'
@@ -6,11 +6,32 @@ import context from '../../store/context'
 
 
 function CartDiv({onClick}) {
+  const[increment, setIncrement] = useState(false)
 
   const Ctx =useContext(context)
   const itemsNumber = Ctx.items.reduce((accmulator, currentValue)=> {
   return accmulator + currentValue.amount
   }, 0)
+
+  const numberClass = `${classes.number} ${increment ? classes.bump : ""}`;
+
+  useEffect(()=>{
+    if(itemsNumber.length === 0){
+     return
+    }
+    setIncrement(true)
+
+    const timer = setTimeout(() => {
+      setIncrement(false);
+    }, 500);
+
+    return ()=> {
+      clearTimeout(timer)
+      
+    }
+    
+  }, [itemsNumber])
+  
 
 
       return (
@@ -18,7 +39,7 @@ function CartDiv({onClick}) {
           <span className={classes.icon}>
             <CartIcon />
           </span>
-          <p className={classes.number}>{itemsNumber}</p>
+          <p className={numberClass}>{itemsNumber}</p>
         </button>
       );
 }

@@ -21,6 +21,7 @@ function Cart({ show, notShowHandler, checkOutHandler }) {
       name={item.name}
       description={item.description}
       image={item.image}
+      price={item.price}
     />
   ));
 

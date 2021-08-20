@@ -2,7 +2,8 @@ import React from "react";
 import classes from "./CartItem.module.css";
 import TrashIcon from "../Layout/TrashIcon";
 
-function CartItem({name, description,image}) {
+function CartItem({name, description,image, price}) {
+  const itemPrice = `$${price}`
   return (
     <div className={classes.container}>
       <div className={classes.details}>
@@ -28,7 +29,7 @@ function CartItem({name, description,image}) {
             <input type="number" value="1" />
             <span>+</span>
           </div>
-          <p className={classes.price}>$20.55</p>
+          <p className={classes.price}>{itemPrice}</p>
         </div>
       </div>
     </div>
