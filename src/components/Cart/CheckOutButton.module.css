@@ -10,6 +10,7 @@
       border:none;
       display: flex;
       justify-content: center;
+       font-family: 'Poppins';
       padding:.6rem 1rem;
       font-size: 17px;
       width:30%;

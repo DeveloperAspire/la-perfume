@@ -13,7 +13,7 @@ import CheckOut from './components/Cart/CheckOut';
 
 function App() {
   const [showCart, setShowCart] = useState(false)
-  const [checkout, setCheckOut] = useState(false)
+  const [checkout, setCheckOut] = useState(true)
 
   const showCartHandler = ()=> {
     setShowCart(!showCart)
