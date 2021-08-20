@@ -1,7 +1,9 @@
 import React from 'react'
 
 const AuthContext = React.createContext({
-     itemsNumber: 0,
+     items: [],
+     totalAmount:0,
+     addItem: (items)=> {}
 })
 
 export default AuthContext
