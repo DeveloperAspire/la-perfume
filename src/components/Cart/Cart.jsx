@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import CartHeader from "./CartHeader";
 import CartItem from "./CartItem";
-import CheckOutButton from "./CheckOutButton";
+import CheckOutButton from "../CheckOut/CheckOutButton";
 import context from "../../store/context";
 
 import classes from "./Cart.module.css";
