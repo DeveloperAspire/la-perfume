@@ -25,7 +25,7 @@ const PerfumeItem = ({id,name,price,image,description}) => {
        setTimeout(()=>{
          setAdded(false)
          buttonClass=`${classes.added}`
-       }, 1000)
+       }, 1200)
        
       }
       return (
