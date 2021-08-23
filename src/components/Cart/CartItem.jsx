@@ -63,9 +63,9 @@ const reduceAmount = ()=> {
         <p>Quantity</p>
         <div className={classes["input--container"]}>
           <div className={classes.input}>
-            <span onClick={reduceAmount}>-</span>
-            <input type="number" value={amount} />
-            <span onClick={addMore}>+</span>
+            <p onClick={reduceAmount}>-</p>
+            <span>{amount}</span> 
+            <p onClick={addMore}>+</p>
           </div>
           <p className={classes.price}>{itemPrice}</p>
         </div>

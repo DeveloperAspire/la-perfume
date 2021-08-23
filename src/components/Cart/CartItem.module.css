@@ -47,22 +47,15 @@
       
 }
 .input{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
       border:1px solid #CCCCCC;
-     display: inline-block;
+     display: inline-flex;
+      justify-content: space-around;
+       align-items: center;
      padding: .5rem 0;
+     width: 15%;
      font-size: 18px;
      margin-top: .5rem;
 }
-.input input{
-      border:none;
-      text-align: center;
-      margin: 0 1rem;
-      width:20%;
-}
-.input span{
+.input p{
       cursor:pointer;
 }
