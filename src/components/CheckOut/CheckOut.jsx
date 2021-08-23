@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from './CheckOut.module.css'
 import CartHeader from '../Cart/CartHeader'
-import EditCartButton from '../Cart/EditCartButton'
+import EditCartButton from '../Buttons/EditCartButton'
 import TotalAmount from "../Layout/TotalAmount";
 import CheckOutForm from './CheckOutForm'
 

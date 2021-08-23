@@ -1,5 +1,5 @@
 import React from 'react'
-import CartButton from "../Cart/CartButton";
+import CartButton from "../Buttons/CartButton";
 import BackIcon from "../Layout/BackIcon";
 
 import classes from './CartHeader.module.css'
