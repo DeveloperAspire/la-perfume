@@ -1,5 +1,5 @@
 import React from "react";
-import ForwardIcon from "../Layout/ForwardIcon";
+import ForwardIcon from "../Icons/ForwardIcon";
 
 import classes from "./EditCartButton.module.css";
 

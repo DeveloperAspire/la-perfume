@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import classes from "./CartItem.module.css";
-import TrashIcon from "../Layout/TrashIcon";
+import TrashIcon from "../Icons/TrashIcon";
 import context from '../../store/context'
 
 function CartItem({id,name, description,image, price, amount}) {

@@ -1,5 +1,5 @@
 import React from "react";
-import BackIcon from "../Layout/BackIcon";
+import BackIcon from "../Icons/BackIcon";
 
 import classes from "./CheckOutButton.module.css";
 

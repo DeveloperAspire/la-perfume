@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react'
 
 import classes from './CartButton.module.css'
-import CartIcon from '../Cart/CartIcon'
+import CartIcon from '../Icons/CartIcon'
 import context from '../../store/context'
 
 
