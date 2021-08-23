@@ -26,7 +26,7 @@
   line-height: 1.5rem;
 
 }
-.product button {
+.product .button {
   background-color: transparent;
   border: none;
   border: 1px solid #f5a034;
@@ -34,6 +34,14 @@
   color: white;
   font-size: 16px;
   transition: transform .3s ease-in;
+}
+.added{
+   background-color: transparent;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  color: white;
+  font-size: 16px;
+  border:1px solid green;
 }
 .product button:hover{
       transform: scale(1.1)
