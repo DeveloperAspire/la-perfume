@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from './CheckOut.module.css'
 import CartHeader from '../Cart/CartHeader'
-import BackToCart from '../Cart/BackToCart'
+import EditCartButton from '../Cart/EditCartButton'
 import TotalAmount from "../Layout/TotalAmount";
 import CheckOutForm from './CheckOutForm'
 
@@ -12,7 +12,7 @@ function CheckOut({ show, checkOutHandler, showCartHandler }) {
       <CartHeader notShowHandler={checkOutHandler} title="Checkout" />
       <CheckOutForm />
       <TotalAmount />
-      <BackToCart checkOutHandler={checkOutHandler} showCartHandler={showCartHandler}/>
+      <EditCartButton checkOutHandler={checkOutHandler} showCartHandler={showCartHandler}/>
     </div>
   );
 }

@@ -1,9 +1,9 @@
 import React from "react";
 import ForwardIcon from "../Layout/ForwardIcon";
 
-import classes from "./BackToCart.module.css";
+import classes from "./EditCartButton.module.css";
 
-function BackToCart({ showCartHandler, checkOutHandler }) {
+const EditCartButton = ({ showCartHandler, checkOutHandler }) => {
   const showCheckOut = () => {
     checkOutHandler();
 
@@ -23,4 +23,4 @@ function BackToCart({ showCartHandler, checkOutHandler }) {
   );
 }
 
-export default BackToCart;
+export default EditCartButton;
