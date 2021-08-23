@@ -34,6 +34,7 @@ function App() {
       <CheckOut
         show={checkout}
         checkOutHandler={checkOutHandler}
+        showCartHandler={showCartHandler}
       />
     </ContextProvider>
   );
