@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import CartHeader from "./CartHeader";
 import CartItem from "./CartItem";
 import CheckOutButton from "../CheckOut/CheckOutButton";
+import TotalAmount from '../Layout/TotalAmount'
 import context from "../../store/context";
 
 import classes from "./Cart.module.css";
@@ -9,7 +10,6 @@ import classes from "./Cart.module.css";
 function Cart({ show, notShowHandler, checkOutHandler }) {
   const Ctx = useContext(context);
   const [cartIsEmpty, setCartIsEmpty] = useState(Ctx.items.length === 0);
-  const totalAmount = `$${Ctx.totalAmount.toFixed(2)}`;
 
   useEffect(() => {
     setCartIsEmpty(Ctx.items.length === 0);
@@ -41,10 +41,7 @@ function Cart({ show, notShowHandler, checkOutHandler }) {
       {cartIsEmpty && cartEmptyText}
       {!cartIsEmpty && (
         <React.Fragment>
-          <div className={classes.total}>
-            <span>Total</span>
-            <span>{totalAmount}</span>
-          </div>
+          <TotalAmount/>
           <CheckOutButton
             notShowHandler={notShowHandler}
             checkOutHandler={checkOutHandler}
