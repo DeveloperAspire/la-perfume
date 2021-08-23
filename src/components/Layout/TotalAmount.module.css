@@ -1,0 +1,9 @@
+.total{
+  text-align: right;
+  margin-top: 1rem;
+}
+.total span{
+  margin-left: 7rem;
+  font-size: 18px;
+  font-weight: bold;
+}
