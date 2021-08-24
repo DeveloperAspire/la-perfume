@@ -83,7 +83,7 @@ const cartReducerFn = (state, action) => {
   return defaultCartState;
 };
 
-function ContextProvider(props) {
+const ContextProvider = (props)=> {
   // eslint-disable-next-line
   const [cartState, dispatchFn] = useReducer(cartReducerFn, defaultCartState);
 
