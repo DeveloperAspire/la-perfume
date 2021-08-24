@@ -5,7 +5,7 @@ import classes from './PerfumeItem.module.css'
 
 const PerfumeItem = ({id,name,price,image,description}) => {
   const [added, setAdded] = useState(false)
-  let buttonClass = `${added ? classes.added : classes.button}`
+  let buttonClass = added ? `${classes.added} ${classes.button} `: classes.button
   const Ctx = useContext(context)
       const itemPrice = `$${price}`
 
@@ -20,11 +20,9 @@ const PerfumeItem = ({id,name,price,image,description}) => {
         }
         Ctx.addItem(newItem)
         setAdded(true)
-        buttonClass = `${classes.added}`;
 
        setTimeout(()=>{
          setAdded(false)
-         buttonClass=`${classes.added}`
        }, 1200)
        
       }

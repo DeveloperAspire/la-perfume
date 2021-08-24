@@ -31,14 +31,10 @@
   padding: 0.5rem 1.5rem;
   color: white;
   font-size: 16px;
-  transition: transform 0.3s ease-in;
+  transition: transform border color 0.3s ease-in;
 }
-.added {
-  background-color: transparent;
-  border: none;
-  padding: 0.5rem 1.5rem;
+.product .added {
   color: #71d957;
-  font-size: 16px;
   border: 1px solid #71d957;
 }
 .product button:hover {
@@ -57,14 +53,21 @@
 }
 
 @media (max-width: 540px) {
+  .product .name {
+  font-size: 18px;
+}
+.product .description {
+  font-size: 14px;
+}
+.product .price {
+  font-size: 18px;
+}
   .img-container {
-    width: 100%;
     min-height: 120px;
-    max-height: 400px;
-    overflow: hidden;
+    max-height: 250px;
   }
-  .img-container img {
-    max-width: 100%;
-    height: auto;
-  }
+  .product .button {
+  font-size: 14px;
+  transition: transform 0.3s ease-in;
+}
 }
