@@ -1,9 +1,15 @@
 .total{
-  text-align: center;
+  text-align: right;
   margin-top: 2.5rem;
 }
 .total span{
   margin-left: 1rem;
   font-size: 18px;
   font-weight: bold;
+}
+
+@media (max-width:540px){
+  .total{
+    text-align: center;
+  }
 }
