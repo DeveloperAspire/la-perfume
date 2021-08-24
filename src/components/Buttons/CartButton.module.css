@@ -11,6 +11,7 @@
 .button:hover .number{
       color:#F5A034;
       background-color: white;
+      cursor: pointer;
      
 }
 .icon{
