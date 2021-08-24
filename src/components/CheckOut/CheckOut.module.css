@@ -4,6 +4,7 @@
   height: 100vh;
   top: 0px;
   right: 100%;
+  overflow: scroll;
   z-index: 30;
   background-color: #f0f5f6;
   text-align: center;
@@ -12,4 +13,10 @@
 }
 .show {
   right: 0%;
+}
+
+@media (max-width:540px){
+  .checkout{
+    padding:2rem 1rem;
+  }
 }
