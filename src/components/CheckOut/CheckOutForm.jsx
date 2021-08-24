@@ -1,83 +1,166 @@
-import React, {useState, useRef} from 'react' 
+import React, {useState, useEffect} from "react";
+import useForm from "../../Hooks/useForm";
 
-import classes from './CheckOutForm.module.css'
+import classes from "./CheckOutForm.module.css";
 
+const CheckOutForm = () => {
+  const [formIsValid, setFormIsValid] = useState(false)
 
-const CheckOutForm = ()=> {
-  const [isValid, setIsValid] = useState({
-    name:null,
-    email:null,
-    address:null,
-    zipCode:null
-  })
-   const nameRef=useRef()
-   const emailRef = useRef()
-   const addressRef = useRef()
-   const zipRef = useRef()
+ 
+  const {
+    blurHandler: emailBlur,
+    changeHandler: emailChangeHandler,
+    isValid: emailIsValid,
+    valueIsTouched: emailIsTouched,
+    enteredValue: enteredEmail,
+    resetHandler: resetEmail,
+  } = useForm((value) => {
+    return !value.includes("@");
+  });
 
-  const submitHandler = (e)=> {
-     e.preventDefault();
-    setIsValid({
-      name:nameRef.current.value.length !== '',
-      email:emailRef.current.value.includes('@'),
-      address:addressRef.current.value.length !== '',
-      zipCode: zipRef.current.value.length === 5
-    })
+  const {
+    blurHandler: nameBlur,
+    changeHandler: nameChangeHandler,
+    isValid: nameIsValid,
+    valueIsTouched: nameIsTouched,
+    enteredValue: enteredName,
+    resetHandler: resetName,
+  } = useForm((value) => {
+    return value.trim() === "";
+  });
 
-    console.log(
-      nameRef.current.value,
-      emailRef.current.value,
-      addressRef.current.value,
-      zipRef.current.value
-    );
-    console.log("Hello");
-  }
+  const {
+    blurHandler: addressBlur,
+    changeHandler: addressChangeHandler,
+    isValid: addressIsValid,
+    valueIsTouched: addressIsTouched,
+    enteredValue: enteredAddress,
+    resetHandler: resetAddress,
+  } = useForm((value) => {
+    return value.trim() === "";
+  });
 
-      return (
-        <React.Fragment>
-          <form className={classes.form} onSubmit={submitHandler}>
-            <div className={classes["form-item"]}>
-              <div className={classes["form-control"]}>
-                <label htmlFor="Name">Full Name</label>
-                <input type="text" ref={nameRef} />
-                {isValid.name && (
-                  <p className={classes.error}>Please enter your Full name</p>
-                )}
-              </div>
+  const {
+    blurHandler: zipBlur,
+    changeHandler: zipChangeHandler,
+    isValid: zipIsValid,
+    valueIsTouched: zipIsTouched,
+    enteredValue: enteredZip,
+    resetHandler: resetZip
+  } = useForm((value) => {
+    return value.length !== 5;
+  });
 
-              <div className={classes["form-control"]}>
-                <label htmlFor="Email">Email Address</label>
-                <input type="email" ref={emailRef} />
-                {isValid.name && (
-                  <p className={classes.error}>
-                    Please enter a valid email address
-                  </p>
-                )}
-              </div>
+   useEffect(() => {
+     if(zipIsValid && emailIsValid && nameIsValid && addressIsValid){
+   setFormIsValid(true)
+     }else{
+       setFormIsValid(false)
+     }
 
-              <div className={classes["form-control"]}>
-                <label htmlFor="Adress">Billing Address</label>
-                <input type="text" ref={addressRef} />
-                {isValid.name && (
-                  <p className={classes.error}>Please enter your address</p>
-                )}
-              </div>
+   }, [zipIsValid, emailIsValid, nameIsValid, addressIsValid]);
+  
+   
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log(enteredName, enteredEmail, enteredZip, enteredAddress);
+    
+    setTimeout(()=>{
+      resetEmail()
+      resetName()
+      resetZip()
+      resetAddress()
+        
+    },700)
+  };
 
-              <div className={classes["form-control"]}>
-                <label htmlFor="Zip Code">Zip Code</label>
-                <input type="text" ref={zipRef} />
-                {isValid.name && (
-                  <p className={classes.error}>Please enter a valid zip code</p>
-                )}
-              </div>
-            </div>
+  const nameIsInvalid = !nameIsValid && nameIsTouched;
+  const nameClass = nameIsInvalid
+    ? `${classes.input} ${classes["input-error"]}`
+    : classes.input;
 
-            <button className={classes.button} type="submit">
-              Send Order
-            </button>
-          </form>
-        </React.Fragment>
-      );
-}
+  const emailIsInvalid = !emailIsValid && emailIsTouched;
+  const emailClass = emailIsInvalid
+    ? `${classes.input} ${classes["input-error"]}`
+    : classes.input;
 
-export default CheckOutForm
+  const addressIsInvalid = !addressIsValid && addressIsTouched;
+  const addressClass = addressIsInvalid
+    ? `${classes.input} ${classes["input-error"]}`
+    : classes.input;
+
+  const zipIsInvalid = !zipIsValid && zipIsTouched;
+  const zipClass = zipIsInvalid
+    ? `${classes.input} ${classes["input-error"]}`
+    : classes.input;
+
+  return (
+    <React.Fragment>
+      <form className={classes.form} onSubmit={submitHandler}>
+        <div className={classes["form-item"]}>
+          <div className={classes["form-control"]}>
+            <label htmlFor="Name">Full Name</label>
+            <input
+              className={nameClass}
+              value={enteredName}
+              type="text"
+              onBlur={nameBlur}
+              onChange={nameChangeHandler}
+            />
+            {nameIsInvalid && (
+              <p className={classes.error}>This field is required</p>
+            )}
+          </div>
+
+          <div className={classes["form-control"]}>
+            <label htmlFor="Email">Email Address</label>
+            <input
+              type="email"
+              value={enteredEmail}
+              className={emailClass}
+              onBlur={emailBlur}
+              onChange={emailChangeHandler}
+            />
+            {emailIsInvalid && (
+              <p className={classes.error}>Please enter a valid email address</p>
+            )}
+          </div>
+
+          <div className={classes["form-control"]}>
+            <label htmlFor="Adress">Billing Address</label>
+            <input
+              type="text"
+              value={enteredAddress}
+              className={addressClass}
+              onBlur={addressBlur}
+              onChange={addressChangeHandler}
+            />
+            {addressIsInvalid && (
+              <p className={classes.error}>This field is required</p>
+            )}
+          </div>
+
+          <div className={classes["form-control"]}>
+            <label htmlFor="Zip Code">Zip Code</label>
+            <input
+              type="text"
+              value={enteredZip}
+              className={zipClass}
+              onBlur={zipBlur}
+              onChange={zipChangeHandler}
+            />
+            {zipIsInvalid && (
+              <p className={classes.error}>Zip code required (5 characters)</p>
+            )}
+          </div>
+        </div>
+
+        <button className={classes.button} type="submit" disabled={!formIsValid}>
+          Send Order
+        </button>
+      </form>
+    </React.Fragment>
+  );
+};
+
+export default CheckOutForm;
