@@ -76,6 +76,7 @@ const CheckOutForm = ({ submitOrder }) => {
       resetName();
       resetZip();
       resetAddress();
+      setFormIsValid(false)
     }, 700);
   };
 
