@@ -28,3 +28,10 @@
   font-size: 22px;
   margin-top: 3rem;
 }
+
+
+@media (max-width:540px){
+  .cart {
+  padding: 2rem 1rem;
+}
+}

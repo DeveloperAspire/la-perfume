@@ -20,3 +20,23 @@
   height: 20px;
   margin-right: 0.5rem;
 }
+
+@media (max-width:540px){
+  .heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.heading h3 {
+  display: none;
+}
+.button {
+  margin-right: 5rem;
+}
+
+.icon {
+  width: 15px;
+  color: #51a8f1;
+  height: 15px;
+}
+}

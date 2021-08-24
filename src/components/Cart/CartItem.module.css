@@ -59,3 +59,34 @@
 .input p{
       cursor:pointer;
 }
+
+@media (max-width:540px){
+      .details{
+      display: grid;
+      grid-template-columns: 1fr;
+      position: relative;
+}
+.description{
+      text-align: left;
+      margin-top: 1rem;
+}
+.description p{
+      font-size: 14px;
+}
+.add--more{
+      text-align: left;
+      margin-top: .5rem;
+
+}
+.input--container{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+      
+}
+.input{
+     width: 50%;
+     font-size: 18px;
+     margin-top: .5rem;
+}
+}
