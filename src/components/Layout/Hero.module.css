@@ -48,8 +48,18 @@ main img{
       padding: 4rem 2rem;
       gap: 0rem;
 }
+main button{
+      padding:  1rem ;
+      color:white;
+      font-size: 16px;
+      width:80%;
+      
+}
 main h1{
       font-size: 20px;
+}
+main p{
+      font-size: 14px;
 }
 main img{
       width:250px;
