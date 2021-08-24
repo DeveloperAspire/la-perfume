@@ -25,3 +25,16 @@
   height: 20px;
   margin-right: 0.5rem;
 }
+
+@media (max-width:540px) {
+      .container{
+      justify-content: flex-start;
+      margin-top:1rem;
+}
+.button{
+      
+      padding:.6rem .5rem;
+      font-size: 16px;
+      width:100%;
+}
+}

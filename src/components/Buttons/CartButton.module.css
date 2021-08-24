@@ -57,3 +57,19 @@
     transform: scale(1);
   }
 }
+
+@media (max-width:540px) {
+  .button{
+      padding: 10px 3rem;
+}
+.icon{
+  width: 35px;
+  height: 35px;
+}
+.number{
+      font-size: 15px;
+      height: 22px;
+      width:22px;
+
+}
+}
