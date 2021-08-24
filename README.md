@@ -1,3 +1,24 @@
+# La-Perfume
+![](src/images/la-perfume.png)
+
+La-Perfume is a French perfume online store for different kind of expensive perfumes for anybody. This application is built with great user experience and beautiful user interface, a simple design.
+
+La-Perfume is also responsive on all devices ranging from Desktop, Tablets and smart phones.
+
+This Project is built 100% with ReactJS and CSS, Firebase real-time database was used as the database to store the products and Cloudinary was used to store images.
+
+La-Perfume also depends on an internet connection to work as it is a web application that runs on the browser.
+
+You can view the live application [here](https://vue-song.netlify.app/)
+
+Do order a perfume so you can smell nice, I await your order!
+
+If you are a developer and you intend to look into this project and it codes, kindly follow the instruction below to set the project up on your local machine.
+
+Happy Coding!
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
