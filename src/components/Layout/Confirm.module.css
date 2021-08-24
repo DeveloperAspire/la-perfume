@@ -1,0 +1,12 @@
+.container{
+      background-color: #71D957;
+      color:white;
+      padding: .7rem 0;
+      position: fixed;
+      right:100%;
+      width:50%;
+      transition: right .5s ease-in-out;
+}
+.show{
+      right:20%
+}
