@@ -37,6 +37,7 @@
 
 .add--more{
       text-align: right;
+      margin-top: 2rem;
 }
 .add--more p{
       font-weight: lighter;
@@ -75,7 +76,7 @@
 }
 .add--more{
       text-align: left;
-      margin-top: .5rem;
+      margin-top: 2rem;
 
 }
 .input--container{
@@ -89,8 +90,4 @@
      font-size: 18px;
      margin-top: .5rem;
 }
-}
-
-@media (width:786px) {
-      
 }
