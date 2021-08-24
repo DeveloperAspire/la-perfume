@@ -9,7 +9,7 @@ This Project is built 100% with ReactJS and CSS, Firebase real-time database was
 
 La-Perfume also depends on an internet connection to work as it is a web application that runs on the browser.
 
-You can view the live application [here](https://vue-song.netlify.app/)
+You can view the live application [here](https://la-perfume.netlify.app/)
 
 Do order a perfume so you can smell nice, I await your order!
 
