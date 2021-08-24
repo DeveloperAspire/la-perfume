@@ -68,6 +68,7 @@ const CheckOutForm = ({ submitOrder }) => {
       zipCode: enteredZip,
       address: enteredAddress,
       orders: Ctx.items,
+      totalAmount:Ctx.totalAmount
     };
     Ctx.clearCart()
     submitOrder(orderDetails);
