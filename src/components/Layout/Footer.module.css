@@ -3,8 +3,8 @@
 footer {
   font-family: "Roboto" sans-serif;
   padding: 2rem;
-  background-color:#020305 ;
-  color:white;
+  background-color: #020305;
+  color: white;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
@@ -17,15 +17,27 @@ footer h1 {
 }
 
 footer a {
-      color:#C4C3EC;
-      text-decoration: none;
+  color: #c4c3ec;
+  text-decoration: none;
 }
 
-footer ul{
-      list-style-type: none;
-      display: flex;
-      align-items: center;
+footer ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
 }
 footer ul li {
-      margin-right: 1rem;
+  margin-right: 1rem;
+}
+
+@media (max-width: 540px) {
+  footer {
+    grid-template-columns: 1fr;
+  }
+  footer h1 {
+    margin-bottom: 1rem;
+  }
+  footer p {
+    margin-bottom: 1rem;
+  }
 }

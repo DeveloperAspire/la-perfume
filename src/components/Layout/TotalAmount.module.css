@@ -1,9 +1,9 @@
 .total{
-  text-align: right;
+  text-align: center;
   margin-top: 1rem;
 }
 .total span{
-  margin-left: 7rem;
+  margin-left: 1rem;
   font-size: 18px;
   font-weight: bold;
 }

@@ -19,4 +19,14 @@ header h1{
       font-size: 3rem;
 }
 
+@media (max-width:540px){
+      header h1{
+            font-size: 2rem;
+      }
+      header{
+      padding:.5rem 3rem;
+      position: fixed;
+}
+}
+
 

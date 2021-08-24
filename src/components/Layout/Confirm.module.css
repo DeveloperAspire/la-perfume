@@ -1,12 +1,24 @@
-.container{
-      background-color: #71D957;
-      color:white;
-      padding: .7rem 0;
-      position: fixed;
-      right:100%;
-      width:50%;
-      transition: right .5s ease-in-out;
+.container {
+  background-color: #71d957;
+  color: white;
+  padding: 0.7rem 0;
+  position: fixed;
+  right: 100%;
+  width: 50%;
+  transition: right 0.5s ease-in-out;
 }
-.show{
-      right:20%
+.show {
+  right: 20%;
+}
+
+@media (max-width: 540px) {
+  .container {
+    width: 100%;
+  }
+  .container p {
+    font-size: 14px;
+  }
+  .show {
+    right: 0%;
+  }
 }

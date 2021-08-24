@@ -42,20 +42,17 @@ main img{
 
 @media (max-width: 540px){
       main{
+      margin-top: 4rem;
       display:grid;
       grid-template-columns: 1fr;
-      background-color: #010204;
-      padding: 1rem;
-      color:white;
-      gap:3rem;
-      margin: 0;
-      text-align: left;
+      padding: 4rem 2rem;
+      gap: 0rem;
 }
 main h1{
-      font-size: 22px;
+      font-size: 20px;
 }
 main img{
-      width:300px;
+      width:250px;
     
 }
 }
