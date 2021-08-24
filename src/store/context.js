@@ -5,7 +5,8 @@ const AuthContext = React.createContext({
   totalAmount: 0,
   addItem: (items) => {},
   removeItem: (items) => {},
-  reduceItem:(items)=> {}
+  reduceItem:(items)=> {},
+  clearCart:()=>{}
 });
 
 export default AuthContext

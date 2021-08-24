@@ -76,6 +76,9 @@ const cartReducerFn = (state, action) => {
 
     return newCart;
   }
+  if(action.type === 'CLEAR'){
+    return defaultCartState;
+  }
 
   return defaultCartState;
 };
@@ -93,12 +96,16 @@ function ContextProvider(props) {
   const reduceItemHandler = (item) => {
     dispatchFn({ type: "REDUCE", value: item });
   };
+  const clearCartHandler = ()=> {
+    dispatchFn({type:'CLEAR'})
+  }
   const value = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     addItem: addItemHandler,
     removeItem: removeItemHandler,
     reduceItem: reduceItemHandler,
+    clearCart:clearCartHandler
   };
 
   return (
