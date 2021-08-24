@@ -1,12 +1,13 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect, useContext } from "react";
 import useForm from "../../Hooks/useForm";
+import context from "../../store/context";
 
 import classes from "./CheckOutForm.module.css";
 
-const CheckOutForm = () => {
-  const [formIsValid, setFormIsValid] = useState(false)
+const CheckOutForm = ({ submitOrder }) => {
+  const [formIsValid, setFormIsValid] = useState(false);
+  const Ctx = useContext(context);
 
- 
   const {
     blurHandler: emailBlur,
     changeHandler: emailChangeHandler,
@@ -46,32 +47,36 @@ const CheckOutForm = () => {
     isValid: zipIsValid,
     valueIsTouched: zipIsTouched,
     enteredValue: enteredZip,
-    resetHandler: resetZip
+    resetHandler: resetZip,
   } = useForm((value) => {
     return value.length !== 5;
   });
 
-   useEffect(() => {
-     if(zipIsValid && emailIsValid && nameIsValid && addressIsValid){
-   setFormIsValid(true)
-     }else{
-       setFormIsValid(false)
-     }
+  useEffect(() => {
+    if (zipIsValid && emailIsValid && nameIsValid && addressIsValid) {
+      setFormIsValid(true);
+    } else {
+      setFormIsValid(false);
+    }
+  }, [zipIsValid, emailIsValid, nameIsValid, addressIsValid]);
 
-   }, [zipIsValid, emailIsValid, nameIsValid, addressIsValid]);
-  
-   
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(enteredName, enteredEmail, enteredZip, enteredAddress);
-    
-    setTimeout(()=>{
-      resetEmail()
-      resetName()
-      resetZip()
-      resetAddress()
-        
-    },700)
+    const orderDetails = {
+      name: enteredName,
+      email: enteredEmail,
+      zipCode: enteredZip,
+      address: enteredAddress,
+      orders: Ctx.items,
+    };
+    Ctx.clearCart()
+    submitOrder(orderDetails);
+    setTimeout(() => {
+      resetEmail();
+      resetName();
+      resetZip();
+      resetAddress();
+    }, 700);
   };
 
   const nameIsInvalid = !nameIsValid && nameIsTouched;
@@ -122,7 +127,9 @@ const CheckOutForm = () => {
               onChange={emailChangeHandler}
             />
             {emailIsInvalid && (
-              <p className={classes.error}>Please enter a valid email address</p>
+              <p className={classes.error}>
+                Please enter a valid email address
+              </p>
             )}
           </div>
 
@@ -155,7 +162,11 @@ const CheckOutForm = () => {
           </div>
         </div>
 
-        <button className={classes.button} type="submit" disabled={!formIsValid}>
+        <button
+          className={classes.button}
+          type="submit"
+          disabled={!formIsValid}
+        >
           Send Order
         </button>
       </form>
