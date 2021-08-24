@@ -8,7 +8,7 @@ function CartItem({id,name, description,image, price, amount}) {
   const filterPrice = Ctx.items.filter((item) => item.id === id);
 
   const totalPrice = filterPrice[0].price * filterPrice[0].amount
-  const itemPrice=`$${totalPrice}`
+  const itemPrice=`$${totalPrice.toFixed(2)}`
 
 const reduceAmount = ()=> {
    const itemToBeReduced = {
