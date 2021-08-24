@@ -11,6 +11,7 @@
       .display{
             grid-template-columns: 1fr;
             padding:1rem;
+            gap:5rem;
       }
 }
 
