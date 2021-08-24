@@ -5,7 +5,7 @@ import CartIcon from '../Icons/CartIcon'
 import context from '../../store/context'
 
 
-function CartDiv({onClick}) {
+const CartDiv = ({onClick}) => {
   const[increment, setIncrement] = useState(false)
 
   const Ctx =useContext(context)

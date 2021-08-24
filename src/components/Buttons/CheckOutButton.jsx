@@ -3,7 +3,7 @@ import BackIcon from "../Icons/BackIcon";
 
 import classes from "./CheckOutButton.module.css";
 
-function CheckOutButton({notShowHandler, checkOutHandler}) {
+const CheckOutButton = ({notShowHandler, checkOutHandler})=> {
 
       const showCheckOut = ()=> {
             notShowHandler()
