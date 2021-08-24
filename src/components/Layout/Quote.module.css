@@ -20,6 +20,9 @@
 }
 
 @media (max-width:540px){
+      .background{
+            padding:2rem 1rem;
+      }
       .background p{
       font-size: 16px;
 }
