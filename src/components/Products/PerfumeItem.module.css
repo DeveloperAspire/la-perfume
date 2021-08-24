@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap");
 
 .product {
   color: white;
@@ -6,25 +6,23 @@
   text-align: center;
   padding: 1.5rem;
   border-radius: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
-.product .name{
+.product .name {
   margin-top: 1rem;
   font-size: 25px;
   letter-spacing: 4px;
 }
 .product .price {
-      text-align: right;
-      margin:1rem 0;
-      font-weight: bold;
-      font-size: 20px;
-      
+  text-align: right;
+  margin: 1rem 0;
+  font-weight: bold;
+  font-size: 20px;
 }
 .product .description {
   text-align: left;
   margin-top: 1.5rem;
   line-height: 1.5rem;
-
 }
 .product .button {
   background-color: transparent;
@@ -33,29 +31,40 @@
   padding: 0.5rem 1.5rem;
   color: white;
   font-size: 16px;
-  transition: transform .3s ease-in;
+  transition: transform 0.3s ease-in;
 }
-.added{
-   background-color: transparent;
+.added {
+  background-color: transparent;
   border: none;
   padding: 0.5rem 1.5rem;
-  color: #71D957;
+  color: #71d957;
   font-size: 16px;
-  border:1px solid #71D957;
+  border: 1px solid #71d957;
 }
-.product button:hover{
-      transform: scale(1.1)
+.product button:hover {
+  transform: scale(1.1);
 }
 
-.img-container{
+.img-container {
   width: 100%;
-    min-height: 120px;
-    max-height: 400px;
-     overflow: hidden;
+  min-height: 120px;
+  max-height: 400px;
+  overflow: hidden;
 }
-.img-container img{
+.img-container img {
   max-width: 100%;
   height: auto;
- 
+}
 
+@media (max-width: 540px) {
+  .img-container {
+    width: 100%;
+    min-height: 120px;
+    max-height: 400px;
+    overflow: hidden;
+  }
+  .img-container img {
+    max-width: 100%;
+    height: auto;
+  }
 }
