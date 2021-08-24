@@ -2,7 +2,7 @@ import React from 'react'
 
 import classes from './Quote.module.css'
 
-function Quote() {
+const Quote =()=> {
       return (
         <div className={classes.background}>
           <p>“A woman's perfume tells more about her than her handwriting. ”</p>

@@ -2,7 +2,7 @@ import React from 'react'
 
 import './Footer.module.css'
 
-function Footer() {
+const Footer = () => {
       return (
         <footer>
           <h1>La Perfume</h1>

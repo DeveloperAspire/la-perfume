@@ -4,7 +4,7 @@ import classes from './Hero.module.css'
 
 import Image from "../../images/hero.jpg";
 
-function Hero() {
+const Hero = ()=> {
   return (
     <main>
       <div className={classes.text}>

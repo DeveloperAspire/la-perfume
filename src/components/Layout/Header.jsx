@@ -3,7 +3,7 @@ import CartButton from '../Buttons/CartButton'
 
 import './Header.module.css'
 
-function Header({onClick}) {
+const Header =({onClick}) =>{
       return (
             <header>
                  <h1>La Perfume</h1> 
