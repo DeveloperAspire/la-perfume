@@ -13,3 +13,9 @@
             padding:1rem;
       }
 }
+
+@media (width:768px){
+      .display{
+            grid-template-columns: 1fr 1fr;
+      }
+}

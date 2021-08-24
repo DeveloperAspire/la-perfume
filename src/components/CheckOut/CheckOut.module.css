@@ -20,3 +20,9 @@
     padding:2rem 1rem;
   }
 }
+@media (width:768px){
+  .checkout{
+    padding:2rem 1rem;
+
+  }
+}

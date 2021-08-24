@@ -47,3 +47,16 @@ footer ul li {
     font-size: 14px;
   }
 }
+
+@media (width:768px) {
+  footer {
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+  }
+  footer ul li {
+    margin-top: 1rem;
+    
+  }
+
+  
+}
