@@ -2,7 +2,7 @@
 
 footer {
   font-family: "Roboto" sans-serif;
-  padding: 2rem;
+  padding: 3rem 2rem;
   background-color: #020305;
   color: white;
   display: grid;
@@ -33,7 +33,7 @@ footer ul li {
 @media (max-width: 540px) {
   footer {
     grid-template-columns: 1fr;
-    padding: 1rem;
+    padding: 2rem;
   }
   footer h1 {
     margin-bottom: 1rem;

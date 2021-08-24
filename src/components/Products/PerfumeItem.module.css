@@ -15,13 +15,13 @@
 }
 .product .price {
   text-align: right;
-  margin: 1rem 0;
+  margin: 2rem 0;
   font-weight: bold;
   font-size: 20px;
 }
 .product .description {
   text-align: left;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   line-height: 1.5rem;
 }
 .product .button {
@@ -30,6 +30,7 @@
   border: 1px solid #f5a034;
   padding: 0.5rem 1.5rem;
   color: white;
+  margin-top: 2rem;
   font-size: 16px;
   transition: transform border color 0.3s ease-in;
 }
@@ -39,6 +40,7 @@
 }
 .product button:hover {
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 .img-container {

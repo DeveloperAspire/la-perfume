@@ -11,13 +11,13 @@ main{
 }
 main h1{
       margin-bottom: 1.5rem;
-      letter-spacing: 2px;
 }
 main p{
+      margin-top: 2rem;
       font-weight: lighter;
 }
 main button{
-      margin-top:2rem;
+      margin-top:3rem;
       background-color: #F5A034;
       border:none;
       padding:1rem 2rem;
