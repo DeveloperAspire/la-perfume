@@ -7,7 +7,7 @@ import CheckOutForm from './CheckOutForm'
 import Confirm from '../Layout/Confirm'
 
 
-function CheckOut({ show, checkOutHandler, showCartHandler }) {
+const CheckOut = ({ show, checkOutHandler, showCartHandler }) => {
   const [submitted, setSubmitted] = useState(false)
 const checkoutClass = `${classes.checkout} ${show ? classes.show : ''}`
 const showConfirmMessage = ()=> {
