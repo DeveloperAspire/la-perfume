@@ -32,13 +32,13 @@
   color: white;
   margin-top: 2rem;
   font-size: 16px;
-  transition: transform border color 0.3s ease-in;
+  transition: transform  0.3s ease-in;
 }
 .product .added {
   color: #71d957;
   border: 1px solid #71d957;
 }
-.product button:hover {
+.product .button:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
