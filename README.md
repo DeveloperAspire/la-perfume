@@ -1,5 +1,5 @@
 # La-Perfume
-![](src/images/la-perfume.png)
+![](src/images/La-Perfume.png)
 
 La-Perfume is a French perfume online store for different kind of expensive perfumes for anybody. This application is built with great user experience and beautiful user interface, a simple design.
 
