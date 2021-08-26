@@ -9,6 +9,27 @@ const CheckOutForm = ({ submitOrder }) => {
   const Ctx = useContext(context);
 
   const {
+    blurHandler: firstNameBlur,
+    changeHandler: firstNameChangeHandler,
+    isValid: firstNameIsValid,
+    valueIsTouched: firstNameIsTouched,
+    enteredValue: enteredFirstName,
+    resetHandler: resetFirstName,
+  } = useForm((value) => {
+    return value.trim() === "";
+  });
+
+  const {
+    blurHandler: lastNameBlur,
+    changeHandler: lastNameChangeHandler,
+    isValid: lastNameIsValid,
+    valueIsTouched: lastNameIsTouched,
+    enteredValue: enteredLastName,
+    resetHandler: resetLastName,
+  } = useForm((value) => {
+    return value.trim() === "";
+  });
+  const {
     blurHandler: emailBlur,
     changeHandler: emailChangeHandler,
     isValid: emailIsValid,
@@ -17,17 +38,6 @@ const CheckOutForm = ({ submitOrder }) => {
     resetHandler: resetEmail,
   } = useForm((value) => {
     return !value.includes("@");
-  });
-
-  const {
-    blurHandler: nameBlur,
-    changeHandler: nameChangeHandler,
-    isValid: nameIsValid,
-    valueIsTouched: nameIsTouched,
-    enteredValue: enteredName,
-    resetHandler: resetName,
-  } = useForm((value) => {
-    return value.trim() === "";
   });
 
   const {
@@ -51,17 +61,16 @@ const CheckOutForm = ({ submitOrder }) => {
   } = useForm((value) => {
     return value.trim() === "";
   });
-   const {
-     blurHandler: cityBlur,
-     changeHandler: cityChangeHandler,
-     isValid: cityIsValid,
-     valueIsTouched: cityIsTouched,
-     enteredValue: enteredCity,
-     resetHandler: resetCity,
-   } = useForm((value) => {
-     return value.trim() === "";
-   });
-
+  const {
+    blurHandler: cityBlur,
+    changeHandler: cityChangeHandler,
+    isValid: cityIsValid,
+    valueIsTouched: cityIsTouched,
+    enteredValue: enteredCity,
+    resetHandler: resetCity,
+  } = useForm((value) => {
+    return value.trim() === "";
+  });
 
   const {
     blurHandler: zipBlur,
@@ -75,40 +84,62 @@ const CheckOutForm = ({ submitOrder }) => {
   });
 
   useEffect(() => {
-    if (zipIsValid && emailIsValid && nameIsValid && addressIsValid) {
+    if (
+      zipIsValid &&
+      emailIsValid &&
+      firstNameIsValid &&
+      addressIsValid &&
+      stateIsValid &&
+      cityIsValid
+    ) {
       setFormIsValid(true);
     } else {
       setFormIsValid(false);
     }
-  }, [zipIsValid, emailIsValid, nameIsValid, addressIsValid]);
+  }, [
+    zipIsValid,
+    emailIsValid,
+    lastNameIsValid,
+    firstNameIsValid,
+    addressIsValid,
+    cityIsValid,
+    stateIsValid,
+  ]);
 
   const submitHandler = (e) => {
     e.preventDefault();
     const orderDetails = {
-      name: enteredName,
+      firstname: enteredFirstName,
+      lastname: enteredLastName,
       email: enteredEmail,
       zipCode: enteredZip,
-      state:enteredState,
-      city:enteredCity,
+      state: enteredState,
+      city: enteredCity,
       address: enteredAddress,
       orders: Ctx.items,
-      totalAmount:Ctx.totalAmount.toFixed(2)
+      totalAmount: Ctx.totalAmount.toFixed(2),
     };
-    Ctx.clearCart()
+    Ctx.clearCart();
     submitOrder(orderDetails);
     setTimeout(() => {
       resetEmail();
-      resetName();
+      resetFirstName();
+      resetLastName();
       resetZip();
       resetCity();
-      resetState()
+      resetState();
       resetAddress();
-      setFormIsValid(false)
+      setFormIsValid(false);
     }, 700);
   };
 
-  const nameIsInvalid = !nameIsValid && nameIsTouched;
-  const nameClass = nameIsInvalid
+  const firstNameIsInvalid = !firstNameIsValid && firstNameIsTouched;
+  const firstNameClass = firstNameIsInvalid
+    ? `${classes.input} ${classes["input-error"]}`
+    : classes.input;
+
+  const lastNameIsInvalid = !lastNameIsValid && lastNameIsTouched;
+  const lastNameClass = lastNameIsInvalid
     ? `${classes.input} ${classes["input-error"]}`
     : classes.input;
 
@@ -122,16 +153,15 @@ const CheckOutForm = ({ submitOrder }) => {
     ? `${classes.input} ${classes["input-error"]}`
     : classes.input;
 
-    const cityIsInvalid = !cityIsValid && cityIsTouched;
-    const cityClass = cityIsInvalid
-      ? `${classes.input} ${classes["input-error"]}`
-      : classes.input;
+  const cityIsInvalid = !cityIsValid && cityIsTouched;
+  const cityClass = cityIsInvalid
+    ? `${classes.input} ${classes["input-error"]}`
+    : classes.input;
 
-
-    const stateIsInvalid = !stateIsValid && stateIsTouched;
-    const stateClass = stateIsInvalid
-      ? `${classes.input} ${classes["input-error"]}`
-      : classes.input;
+  const stateIsInvalid = !stateIsValid && stateIsTouched;
+  const stateClass = stateIsInvalid
+    ? `${classes.input} ${classes["input-error"]}`
+    : classes.input;
 
   const zipIsInvalid = !zipIsValid && zipIsTouched;
   const zipClass = zipIsInvalid
@@ -143,19 +173,32 @@ const CheckOutForm = ({ submitOrder }) => {
       <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes["form-item"]}>
           <div className={classes["form-control"]}>
-            <label htmlFor="Name">Full Name</label>
+            <label htmlFor="First Name">First Name</label>
             <input
-              className={nameClass}
-              value={enteredName}
+              className={firstNameClass}
+              value={enteredFirstName}
               type="text"
-              onBlur={nameBlur}
-              onChange={nameChangeHandler}
+              onBlur={firstNameBlur}
+              onChange={firstNameChangeHandler}
             />
-            {nameIsInvalid && (
+            {firstNameIsInvalid && (
               <p className={classes.error}>This field is required</p>
             )}
           </div>
 
+          <div className={classes["form-control"]}>
+            <label htmlFor="Last Name">Last Name</label>
+            <input
+              className={lastNameClass}
+              value={enteredLastName}
+              type="text"
+              onBlur={lastNameBlur}
+              onChange={lastNameChangeHandler}
+            />
+            {lastNameIsInvalid && (
+              <p className={classes.error}>This field is required</p>
+            )}
+          </div>
           <div className={classes["form-control"]}>
             <label htmlFor="Email">Email Address</label>
             <input
