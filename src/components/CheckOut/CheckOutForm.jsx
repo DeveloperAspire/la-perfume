@@ -42,6 +42,28 @@ const CheckOutForm = ({ submitOrder }) => {
   });
 
   const {
+    blurHandler: stateBlur,
+    changeHandler: stateChangeHandler,
+    isValid: stateIsValid,
+    valueIsTouched: stateIsTouched,
+    enteredValue: enteredState,
+    resetHandler: resetState,
+  } = useForm((value) => {
+    return value.trim() === "";
+  });
+   const {
+     blurHandler: cityBlur,
+     changeHandler: cityChangeHandler,
+     isValid: cityIsValid,
+     valueIsTouched: cityIsTouched,
+     enteredValue: enteredCity,
+     resetHandler: resetCity,
+   } = useForm((value) => {
+     return value.trim() === "";
+   });
+
+
+  const {
     blurHandler: zipBlur,
     changeHandler: zipChangeHandler,
     isValid: zipIsValid,
@@ -66,9 +88,11 @@ const CheckOutForm = ({ submitOrder }) => {
       name: enteredName,
       email: enteredEmail,
       zipCode: enteredZip,
+      state:enteredState,
+      city:enteredCity,
       address: enteredAddress,
       orders: Ctx.items,
-      totalAmount:Ctx.totalAmount
+      totalAmount:Ctx.totalAmount.toFixed(2)
     };
     Ctx.clearCart()
     submitOrder(orderDetails);
@@ -76,6 +100,8 @@ const CheckOutForm = ({ submitOrder }) => {
       resetEmail();
       resetName();
       resetZip();
+      resetCity();
+      resetState()
       resetAddress();
       setFormIsValid(false)
     }, 700);
@@ -95,6 +121,17 @@ const CheckOutForm = ({ submitOrder }) => {
   const addressClass = addressIsInvalid
     ? `${classes.input} ${classes["input-error"]}`
     : classes.input;
+
+    const cityIsInvalid = !cityIsValid && cityIsTouched;
+    const cityClass = cityIsInvalid
+      ? `${classes.input} ${classes["input-error"]}`
+      : classes.input;
+
+
+    const stateIsInvalid = !stateIsValid && stateIsTouched;
+    const stateClass = stateIsInvalid
+      ? `${classes.input} ${classes["input-error"]}`
+      : classes.input;
 
   const zipIsInvalid = !zipIsValid && zipIsTouched;
   const zipClass = zipIsInvalid
@@ -136,7 +173,34 @@ const CheckOutForm = ({ submitOrder }) => {
           </div>
 
           <div className={classes["form-control"]}>
-            <label htmlFor="Adress">Billing Address</label>
+            <label htmlFor="State">State</label>
+            <input
+              type="text"
+              value={enteredState}
+              className={stateClass}
+              onBlur={stateBlur}
+              onChange={stateChangeHandler}
+            />
+            {stateIsInvalid && (
+              <p className={classes.error}>Please add your state</p>
+            )}
+          </div>
+
+          <div className={classes["form-control"]}>
+            <label htmlFor="City">City</label>
+            <input
+              type="text"
+              value={enteredCity}
+              className={cityClass}
+              onBlur={cityBlur}
+              onChange={cityChangeHandler}
+            />
+            {cityIsInvalid && (
+              <p className={classes.error}>Please add a city</p>
+            )}
+          </div>
+          <div className={classes["form-control"]}>
+            <label htmlFor="Address">Shipping Address</label>
             <input
               type="text"
               value={enteredAddress}
