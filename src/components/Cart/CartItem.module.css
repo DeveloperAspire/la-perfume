@@ -32,7 +32,9 @@
       text-align: left;
 }
 .description p{
-      font-weight: lighter;
+      font-weight: 300;
+      margin-top: 1rem;
+      font-size: 18px;
 }
 
 .add--more{
@@ -43,7 +45,7 @@
       font-weight: lighter;
 }
 .input--container .price{
-      font-weight: bold;
+      font-weight: 400;
       margin-top: 1rem;
       
 }
@@ -72,7 +74,7 @@
       margin-top: 3rem;
 }
 .description p{
-      font-size: 14px;
+      font-size: 16px;
 }
 .add--more{
       text-align: left;

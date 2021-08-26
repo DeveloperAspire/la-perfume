@@ -11,10 +11,12 @@ main{
 }
 main h1{
       margin-bottom: 1.5rem;
+      line-height: 1.2;
 }
 main p{
       margin-top: 2rem;
-      font-weight: lighter;
+      font-weight: 300;
+      font-size: 20px;
 }
 main button{
       margin-top:3rem;
@@ -25,6 +27,7 @@ main button{
       font-weight: bold;
       font-size: 18px;
       transition: transform .5s ease-in;
+      font-family: 'Josefin Sans', sans-serif;
       
 }
 main button:hover{

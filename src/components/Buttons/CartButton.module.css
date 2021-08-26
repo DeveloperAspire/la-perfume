@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&display=swap');
+
 .button{
       padding:10px 3rem;
       display: flex;
@@ -7,6 +9,7 @@
       color:#F5A034;
       position: relative;
       z-index: 1000;
+      font-family: 'Josefin Sans', sans-serif;
 }
 .button:hover .number{
       color:#F5A034;
