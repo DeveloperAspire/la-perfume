@@ -1,5 +1,5 @@
 .button{
-      padding: 10px 3rem;
+      padding:10px 3rem;
       display: flex;
       align-items: center;
       background-color: transparent;
@@ -60,7 +60,7 @@
 
 @media (max-width:540px) {
   .button{
-      padding: 10px 3rem;
+      padding: 10px 1.7rem 10px 3rem;
 }
 .icon{
   width: 35px;
