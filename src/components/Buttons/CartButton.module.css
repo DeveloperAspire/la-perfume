@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&display=swap');
 
 .button{
-      padding:10px 3rem;
+     padding: 10px 0rem 10px 3rem;
       display: flex;
       align-items: center;
       background-color: transparent;
