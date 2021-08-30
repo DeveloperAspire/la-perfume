@@ -80,7 +80,7 @@ const CheckOutForm = ({ submitOrder }) => {
     enteredValue: enteredZip,
     resetHandler: resetZip,
   } = useForm((value) => {
-    return value.length !== 6;
+    return value.length !== 5;
   });
 
   useEffect(() => {
@@ -266,7 +266,7 @@ const CheckOutForm = ({ submitOrder }) => {
               onChange={zipChangeHandler}
             />
             {zipIsInvalid && (
-              <p className={classes.error}>Zip code required (6 characters)</p>
+              <p className={classes.error}>Zip code required (5 characters)</p>
             )}
           </div>
         </div>
