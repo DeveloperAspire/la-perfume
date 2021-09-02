@@ -42,7 +42,7 @@ const cartReducerFn = (state, action) => {
       (item) => item.id !== action.value.id
     );
     const totalAmount =
-      state.totalAmount - existingItem.price
+      state.totalAmount - existingItem.price * existingItem.amount
     const newCart = {
       items: updatedItems,
       totalAmount: totalAmount,
