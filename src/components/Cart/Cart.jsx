@@ -1,9 +1,9 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import CartHeader from "./CartHeader";
 import CartItem from "./CartItem";
 import CheckOutButton from "../Buttons/CheckOutButton";
 import TotalAmount from '../Layout/TotalAmount'
-import context from "../../store/context";
+
 
 import { useSelector } from "react-redux";
 
@@ -11,7 +11,6 @@ import classes from "./Cart.module.css";
 
 function Cart({ show, notShowHandler, checkOutHandler }) {
   const cartItems = useSelector(state => state.cart.items)
-  const Ctx = useContext(context);
   const [cartIsEmpty, setCartIsEmpty] = useState(cartItems.length === 0);
 
   useEffect(() => {

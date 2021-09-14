@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import useForm from "../../Hooks/useForm";
-import context from "../../store/context";
 import { useSelector, useDispatch } from "react-redux";
 import { clearCart } from "../../store/cartSlice";
 
@@ -11,8 +10,6 @@ const CheckOutForm = ({ submitOrder }) => {
   const cartItems = useSelector(state => state.cart.items)
   const cartTotal = useSelector(state => state.cart.totalPrice)
   const dispatch = useDispatch()
-  const Ctx = useContext(context);
-
   const {
     blurHandler: firstNameBlur,
     changeHandler: firstNameChangeHandler,
