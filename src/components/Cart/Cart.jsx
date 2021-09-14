@@ -5,17 +5,20 @@ import CheckOutButton from "../Buttons/CheckOutButton";
 import TotalAmount from '../Layout/TotalAmount'
 import context from "../../store/context";
 
+import { useSelector } from "react-redux";
+
 import classes from "./Cart.module.css";
 
 function Cart({ show, notShowHandler, checkOutHandler }) {
+  const cartItems = useSelector(state => state.cart.items)
   const Ctx = useContext(context);
-  const [cartIsEmpty, setCartIsEmpty] = useState(Ctx.items.length === 0);
+  const [cartIsEmpty, setCartIsEmpty] = useState(cartItems.length === 0);
 
   useEffect(() => {
-    setCartIsEmpty(Ctx.items.length === 0);
-  }, [Ctx.items]);
+    setCartIsEmpty(cartItems.length === 0);
+  }, [cartItems]);
 
-  const cartItem = Ctx.items.map((item) => (
+  const cartItem = cartItems.map((item) => (
     <CartItem
       key={item.id}
       id={item.id}

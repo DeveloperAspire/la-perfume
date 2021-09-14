@@ -1,10 +1,10 @@
-import React, {useContext} from 'react'
-import context from "../../store/context";
 import classes from './TotalAmount.module.css'
 
+import { useSelector } from 'react-redux';
+
 const TotalAmount = ()=> {
-      const Ctx = useContext(context)
-      const totalAmount = `$${Ctx.totalAmount.toFixed(2)}`;
+  const cartPrice = useSelector(state => state.cart.totalPrice)
+      const totalAmount = `$${cartPrice.toFixed(2)}`;
        return (
          <div className={classes.total}>
            <span>Total</span>

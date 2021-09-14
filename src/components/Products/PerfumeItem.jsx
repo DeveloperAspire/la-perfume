@@ -1,12 +1,14 @@
-import React, {useContext,useState}from 'react'
-import context from '../../store/context'
+import React, {useState}from 'react'
+import { addItemToCart } from '../../store/cartSlice'
+import { useDispatch } from 'react-redux'
+
 
 import classes from './PerfumeItem.module.css'
 
 const PerfumeItem = ({id,name,price,image,description}) => {
+  const dispatch = useDispatch()
   const [added, setAdded] = useState(false)
   let buttonClass = added ? `${classes.added} ${classes.button} `: classes.button
-  const Ctx = useContext(context)
       const itemPrice = `$${price}`
 
       const addToCart = ()=> {
@@ -18,7 +20,7 @@ const PerfumeItem = ({id,name,price,image,description}) => {
           description,
           amount:1
         }
-        Ctx.addItem(newItem)
+        dispatch(addItemToCart(newItem))
         setAdded(true)
 
        setTimeout(()=>{

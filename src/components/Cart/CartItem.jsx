@@ -1,11 +1,16 @@
-import React, {useContext} from "react";
+import React from "react";
 import classes from "./CartItem.module.css";
 import TrashIcon from "../Icons/TrashIcon";
-import context from '../../store/context'
+
+import {useSelector} from 'react-redux'
+import {removeItemFromCart, reduceItemInCart, addItemToCart} from '../../store/cartSlice'
+import {useDispatch} from 'react-redux'
 
 function CartItem({id,name, description,image, price, amount}) {
-  const Ctx = useContext(context);
-  const filterPrice = Ctx.items.filter((item) => item.id === id);
+  const cartItems = useSelector( state => state.cart.items)
+  const dispatch = useDispatch()
+
+  const filterPrice = cartItems.filter((item) => item.id === id);
 
   const totalPrice = filterPrice[0].price * filterPrice[0].amount
   const itemPrice=`$${totalPrice.toFixed(2)}`
@@ -19,19 +24,12 @@ const reduceAmount = ()=> {
      amount: 1,
      description,
    };
-   Ctx.reduceItem(itemToBeReduced);
+   dispatch(reduceItemInCart(itemToBeReduced))
 
 }
   const removeItem = () => {
-    const removed = {
-      id,
-      name,
-      image,
-      price,
-      amount: 1,
-      description,
-    };
-    Ctx.removeItem(removed);
+  dispatch(removeItemFromCart(id))
+
   };
   const addMore = () => {
     const added = {
@@ -42,7 +40,7 @@ const reduceAmount = ()=> {
       amount: 1,
       description,
     };
-    Ctx.addItem(added);
+    dispatch(addItemToCart(added))
   };
   return (
     <div className={classes.container}>

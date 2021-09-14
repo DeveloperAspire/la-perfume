@@ -1,22 +1,23 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, { useEffect, useState} from 'react'
+import { useSelector } from 'react-redux'
 
 import classes from './CartButton.module.css'
 import CartIcon from '../Icons/CartIcon'
-import context from '../../store/context'
+
 
 
 const CartDiv = ({onClick}) => {
   const[increment, setIncrement] = useState(false)
+  const cartItem = useSelector(state => state.cart.items)
+  const itemNumber = cartItem.reduce((accmulator, currentValue)=> {
+    return accmulator + currentValue.amount
+  },0)
 
-  const Ctx =useContext(context)
-  const itemsNumber = Ctx.items.reduce((accmulator, currentValue)=> {
-  return accmulator + currentValue.amount
-  }, 0)
-
+  
   const numberClass = `${classes.number} ${increment ? classes.bump : ""}`;
 
   useEffect(()=>{
-    if(itemsNumber.length === 0){
+    if(itemNumber.length === 0){
      return
     }
     setIncrement(true)
@@ -30,7 +31,7 @@ const CartDiv = ({onClick}) => {
       
     }
     
-  }, [itemsNumber])
+  }, [itemNumber])
   
 
 
@@ -39,7 +40,7 @@ const CartDiv = ({onClick}) => {
           <span className={classes.icon}>
             <CartIcon />
           </span>
-          <p className={numberClass}>{itemsNumber}</p>
+          <p className={numberClass}>{itemNumber}</p>
         </button>
       );
 }

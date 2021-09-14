@@ -1,11 +1,16 @@
 import React, { useState, useEffect, useContext } from "react";
 import useForm from "../../Hooks/useForm";
 import context from "../../store/context";
+import { useSelector, useDispatch } from "react-redux";
+import { clearCart } from "../../store/cartSlice";
 
 import classes from "./CheckOutForm.module.css";
 
 const CheckOutForm = ({ submitOrder }) => {
   const [formIsValid, setFormIsValid] = useState(false);
+  const cartItems = useSelector(state => state.cart.items)
+  const cartTotal = useSelector(state => state.cart.totalPrice)
+  const dispatch = useDispatch()
   const Ctx = useContext(context);
 
   const {
@@ -116,10 +121,10 @@ const CheckOutForm = ({ submitOrder }) => {
       state: enteredState,
       city: enteredCity,
       address: enteredAddress,
-      orders: Ctx.items,
-      totalAmount: Ctx.totalAmount.toFixed(2),
+      orders: cartItems,
+      totalAmount: cartTotal.toFixed(2),
     };
-    Ctx.clearCart();
+    dispatch(clearCart());
     submitOrder(orderDetails);
     setTimeout(() => {
       resetEmail();
