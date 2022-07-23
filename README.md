@@ -22,7 +22,7 @@ You can view the live application [here](https://la-perfume.netlify.app/)
 
 Do order a perfume so you can smell nice, I await your order!
 
-*If you are a developer and you intend to look into this project and it codes, kindly follow the instruction below to set the project up on your local machine.
+**If you are a developer and you intend to look into this project and it codes, kindly follow the instruction below to set the project up on your local machine.**
 
 Happy Coding!
 
